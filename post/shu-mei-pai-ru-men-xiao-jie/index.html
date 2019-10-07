@@ -79,35 +79,69 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">The Fur.厦门站</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">树莓派入门小结</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-10-07 / 1 min read
+          2018-02-04 / 4 min read
         </div>
         
         <div class="post-content yue">
-          <p>最近一直都在不停地出差和项目中度过，好久没拿起相机，书也总是看了一半，回到家只想瘫倒，以至于都没有想到，已经到了夏天的尾巴了。在这个南方城市，夏天总是要到9月末夏天才会结束。但以从少年时代培养出来的感受来说，8月末，暑期结束，无疑就代表着夏天的完结了。</p>
-<!-- more -->
-<p>百无聊赖的，总是后知后觉的，夏天。直到我在台湾乐队The Fur.的现场，久违的花草系indie pop，吉他带着青春情绪的声线，梦幻青葱的合成器，我才想到，现在已经是夏天的尾巴了。</p>
-<p>这个夏天已经无法挽回了，只有沉浸在音乐里，身体像所有被浪费掉的时间一样摇晃着，仿佛新学期永远也不会到来。<br>
-<img src="https://mazerising.com//post-images/1570435809652.jpg" alt=""></p>
+          <p><img src="https://mazerising.com//post-images/1570437468430.jpg" alt="树莓派"><br>
+购入树莓派3B型一枚，还顺便买了官方出的萌萌的外壳，以及散热片。加上家里闲置的安卓充电插头和数据线，还有撸斐讯K2P时赠送的32GTF卡，正好可以让树莓派跑起来。作为树莓派新手，做一下我的入门小结。<!-- more --></p>
+<p><strong>1. 烧录系统</strong><br>
+我选择的是官方推荐的<a href="https://www.raspberrypi.org/downloads/raspbian/" title="Raspbian OS">Raspbian OS</a>，是基于我比较熟悉的Debian 8 做的定制版，并带有图形桌面（注：这里使用BT下载速度更快）。使用<a href="https://sourceforge.net/projects/win32diskimager/" title="win32diskimager">win32diskimager</a>将下载得到的img烧录至TF卡中。烧录完毕后，在名为boot的TF卡的根目录中新建一个名为SSH的空文件。新建SSH.txt，再将后缀去掉即可。</p>
+<p><strong>2. 开机</strong><br>
+将TF卡插入主板，连接上电源，再用网线连接路由器即可</p>
+<p><strong>3. 连接SSH</strong><br>
+登录路由器的面板中可以清楚看到Raspberrypi分配到的IP地址。使用<a href="http://www.putty.org/" title="putty">putty</a>登录IP（端口为22），默认的用户名为pi，密码为raspberry。像Debian 8一样输入<code>passwd</code>更换默认密码。</p>
+<p><strong>4. 更换源</strong><br>
+发现国内的网络连接到官方镜像实在太慢，更换成国内的源速度会比较快。我试了清华大学的源，我这里的网络连接依旧很慢，最后改成了阿里云的源了。<br>
+sudo nano /etc/apt/sources.list<br>
+在默认的源前面加如注释#，使其失效。在下方粘贴如下内容：<br>
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib rpi<br>
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib rpi<br>
+Ctrl+O回车保存，Ctrl+X退出nano编辑器<br>
+sudo nano /etc/apt/sources.list.d/raspi.list<br>
+在默认的源前面加如注释#，使其失效。在下方粘贴如下内容：<br>
+deb http://mirrors.aliyun.com/debian/ jessie main ui<br>
+Ctrl+O回车保存，Ctrl+X退出nano编辑器。最后执行<code>sudo apt-get update</code>即可。<br>
+不过我有点疑惑，是不是阿里云的镜像有些安装包没有呢？</p>
+<p><strong>5. 开启WIFI</strong><br>
+插着网线太麻烦了，好在树莓派自带了WIFI模块。<br>
+这里我遇到了坑。使用wpa_supplicant.conf来启动WIFI失败。只好曲线救国，通过开启VNC来在图形桌面上开启WIFI。<br>
+sudo apt-get install tightvncserver<br>
+vncserver<br>
+注：分两次输入。根据提示创建8位数的VNC密码，之后就可以开启vncserver了。<br>
+电脑上打开<a href="https://www.realvnc.com/en/connect/download/viewer/" title="VNC Viewer">VNC Viewer</a>，在地址栏上输入<code>树莓派分配的IP:1</code>后就可以根据提示连接VNC并看到图形界面了。在树莓派可爱的界面的右上角，像使用PC一样连接WIFI吧。<br>
+连接上WIFI后可以断开网线使用WIFI连接了。不过这时注意树莓派分配到的IP地址会发生变更，需要重新查询。</p>
+<p>以上就是我这个树莓派新手的入门总结。接下来就要好好想想要拿树莓派来做什么啦。</p>
+<p>我购买VPS的时候有看到一些服务商有将树莓派托管在机房出租，想过去一排排可爱的树莓派乖乖地整齐地被放在机房里，有种萌感。CMour的小水管树莓派机房也已经搭建完成啦。</p>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://mazerising.com//tag/Y8N4dfOFu">
-            <span class="flex-auto">livehouse</span>
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://mazerising.com//tag/5amjyhCeT">
+            <span class="flex-auto">树莓派</span>
           </a>
         
 
 
         <div class="flex justify-between py-8">
           
+            <div class="prev-post">
+              <a href="https://mazerising.com//post/shan-jian-you-le-chang-guan-zhan-ji">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  山间游乐场——观展记
+                </h3>
+              </a>
+            </div>
+          
 
           
             <div class="next-post">
-              <a href="https://mazerising.com//post/shan-jian-you-le-chang-guan-zhan-ji">
+              <a href="https://mazerising.com//post/wei-wang-zhan-zai-android-chrome">
                 <h3 class="post-title">
-                  山间游乐场——观展记
+                  为网站在Android Chrome 浏览器的 appbar 和 statusbar 定制颜色 
                   <i class="remixicon-arrow-right-line"></i>
                 </h3>
               </a>
