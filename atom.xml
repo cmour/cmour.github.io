@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mazerising.com/</id>
     <title>Maze Rising</title>
-    <updated>2019-10-07T11:15:34.535Z</updated>
+    <updated>2019-10-07T11:54:52.801Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mazerising.com/"/>
     <link rel="self" href="https://mazerising.com//atom.xml"/>
@@ -23,7 +23,7 @@
 优点：</p>
 <ol>
 <li>Gridea软件用起来舒服，适合不会编程的小白</li>
-<li>后期维护简单，GitHub全包了</li>
+<li>后期维护简单，GitHub全包了，稳定</li>
 <li>成本低廉，只需要购买域名（甚至可以用GitHub的二级域名）</li>
 </ol>
 <p>缺点：</p>
@@ -31,6 +31,8 @@
 <li>主题还是太少，毕竟是个新的项目，活跃度一般</li>
 <li>GitHub国内连接速度一般，不能放大图片</li>
 <li>有些许被墙的风险（微软收购后应该还好）</li>
+<li>基于PC和MAC，无移动端，也没有网页端；虽说多数情况下都是用PC码字，也能通过网盘同步，但在一些特殊情况下有些不方便</li>
+<li>静态页面，渲染要一段时间</li>
 </ol>
 ]]></content>
     </entry>
