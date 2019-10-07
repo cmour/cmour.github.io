@@ -40,41 +40,9 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-            
-              
-                <a href="https://twitter.com/seymourwang" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-twitter-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://telegram.me/cmour" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://www.instagram.com/cmour" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-instagram-line"></i>
-                </a>
-              
-            
-              
-            
-              
+          <div class="toc-container hidden lg:block">
             
           </div>
         </div>
@@ -119,43 +87,80 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> web
-        </h2>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Gridea与Github套餐</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-10-07 / 1 min read
+        </div>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-    <div class="content">
-      <a href="https://mazerising.com//post/gridea-yu-github-tao-can">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Gridea与Github套餐</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>把原来hexo删了，依然是基于GitHub，重新使用Gridea翻新了这个博客。教程参考了<a href="https://gridea.dev/">Gridea官网</a>和<a href="https://www.bilibili.com/video/av58189878?from=search&amp;seid=7013004481311623653">B站上的一个视频</a></p>
+        <div class="post-content yue">
+          <p>把原来hexo删了，依然是基于GitHub，重新使用Gridea翻新了这个博客。教程参考了<a href="https://gridea.dev/">Gridea官网</a>和<a href="https://www.bilibili.com/video/av58189878?from=search&amp;seid=7013004481311623653">B站上的一个视频</a></p>
+<!-- more -->
+<p>Gridea这个软件用起来还是蛮舒服的，这套系统我觉得有如下优缺点：<br>
+优点：</p>
+<ol>
+<li>Gridea软件用起来舒服，适合不会编程的小白</li>
+<li>后期维护简单，GitHub全包了</li>
+<li>成本低廉，只需要购买域名（甚至可以用GitHub的二级域名）</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>主题还是太少，毕竟是个新的项目，活跃度一般</li>
+<li>GitHub国内连接速度一般，不能放大图片</li>
+<li>有些许被墙的风险（微软收购后应该还好）</li>
+</ol>
 
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-10-07 / 1 min read</div>
-    </div>
-  </section>
+        </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-    <div class="content">
-      <a href="https://mazerising.com//post/wei-wang-zhan-zai-android-chrome">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">为网站在Android Chrome 浏览器的 appbar 和 statusbar 定制颜色 </h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>在Chrome39之后的版本中，可以定制一个网页显示时appbar和statusbar的颜色。实现方法很简单。</p>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://mazerising.com//tag/Tsk6F5XOO">
+            <span class="flex-auto">web</span>
+          </a>
+        
 
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-02-04 / 1 min read</div>
-    </div>
-  </section>
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="https://mazerising.com//post/the-fursha-men-zhan">
+                <h3 class="post-title">
+                  The Fur.厦门站
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'e9692db4265736ad7b56',
+    clientSecret: 'dbaf2cb2838d068629c472ea3379b2a54c892f27',
+    repo: 'cmour.github.io',
+    owner: 'cmour',
+    admin: ['cmour'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
       </div>
     </div>
