@@ -1812,3 +1812,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
           background: RGBA(101,182,135,0.14)!important;
         }
          
+      .post-list-container .post-inner .post:hover {
+transform: none;
+}
+    
